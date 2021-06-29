@@ -81,36 +81,31 @@ Store.prototype.conTablel=function(){
   tableEl.appendChild(trEl);
 };
 function totalyph (){
-  tableEl= document.getElementById('tabel');
-  let footer = document.createElement('tfoot');
-  let rr = document.createElement('tr');
-  let td = document.createElement('td');
-  td.document.textContent('Total/h');
-  rr.document.appendChild(td);
 
 
-  let megatotal=0;
-  for (let h=0 ; h<time.length; h++)
-  {
-    let sum=0;
+  let tfootEl = document.createElement('tfoot');
+  let tdEl = document.createElement('td');
+  tdEl.textContent = 'Totals';
+  tfootEl.appendChild(tdEl);
+  tableEl.appendChild(tfootEl);
+  let megaTotal = 0;
+  for (let h = 0; h < time.length; h++) {
+    tdEl = document.createElement('td');
+    let sum = 0;
 
-    for (let s=0;s<arrStore.length; s++)
-    {
-      sum+=arrStore[s].avCookisph[h];
+    for (let s = 0; s < arrStore.length; s++) {
+
+      sum = sum + arrStore[s].avCookisph[h];
+      megaTotal += sum;
 
     }
-
-    megatotal+=sum;
-    td.document.createElement('td');
-    td.document.textContent(sum);
-    rr.document.appendChild(td);
-
+    tdEl.textContent =sum;
+    tfootEl.appendChild(tdEl);
   }
-  td.document.createElement('td');
-  td.document.textContent(megatotal);
-  rr.document.appendChild(td);
-  footer.document.appendChild(rr);
-  tableEl.document.appendChild(footer);
+  let totalTdEl = document.createElement('td');
+  totalTdEl.textContent = megaTotal;
+  tfootEl.appendChild(totalTdEl);
+
 
 }
 createTableHeader();
