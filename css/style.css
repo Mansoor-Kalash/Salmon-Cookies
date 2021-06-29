@@ -1,3 +1,52 @@
+
+* {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
 table,  td,  th,  tr {
 border: 1px solid;
+}
+a{
+    text-decoration: none;
+}
+header{
+    background-color: #DDD;
+    color: black;
+    position: sticky;
+    border: 1px solid blue;
+
+}
+header img {
+    width: 100px;
+    height: 60px;
+}
+nav li {
+    display: inline;
+    margin-left: 40px;
+    
+}
+
+h1{
+    text-align: center;
+    color: brown;
+}
+#imgh {
+    background-position: center;
+    width:  300px;
+    height: auto;
+ margin-left: 300px;   
+
+}
+.im {
+    background-position:left;
+    width:  200px;
+    height: auto;
+ /* margin-left: 300px;   */
+
+
+}
+footer a{
+  margin: 50%;
 }
