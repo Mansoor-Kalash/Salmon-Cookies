@@ -50,3 +50,6 @@ h1{
 footer a{
   margin: 50%;
 }
+li {
+    text-decoration: none;
+}
