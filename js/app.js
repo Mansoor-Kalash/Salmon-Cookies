@@ -60,21 +60,7 @@ function createTableHeader() {
   thEl1.textContent = 'total';
   trEl.appendChild(thEl1);
 
-  // let thEl1 = document.createElement('th');
-  // thEl1.textContent = 'Name';
-  // trEl.appendChild(thEl1);
-  // let thEl2 = document.createElement('th');
-  // thEl2.textContent = 'age';
-  // trEl.appendChild(thEl2);
-  // let thEl3 = document.createElement('th');
-  // thEl3.textContent = 'is good with kids';
-  // trEl.appendChild(thEl3);
-  // let thEl4 = document.createElement('th');
-  // thEl4.textContent = 'is good with dogs';
-  // trEl.appendChild(thEl4);
-  // let thEl5 = document.createElement('th');
-  // thEl5.textContent = 'is good with cats';
-  // trEl.appendChild(thEl5);
+
 }
 Store.prototype.conTablel=function(){
   let trEl = document.createElement('tr');
@@ -94,29 +80,68 @@ Store.prototype.conTablel=function(){
   trEl.appendChild(thEl1);
   tableEl.appendChild(trEl);
 };
+function totalyph (){
+  tableEl= document.getElementById('tabel');
+  let footer = document.createElement('tfoot');
+  let rr = document.createElement('tr');
+  let td = document.createElement('td');
+  td.document.textContent('Total/h');
+  rr.document.appendChild(td);
+
+
+  let megatotal=0;
+  for (let h=0 ; h<time.length; h++)
+  {
+    let sum=0;
+
+    for (let s=0;s<arrStore.length; s++)
+    {
+      sum+=arrStore[s].avCookisph[h];
+
+    }
+
+    megatotal+=sum;
+    td.document.createElement('td');
+    td.document.textContent(sum);
+    rr.document.appendChild(td);
+
+  }
+  td.document.createElement('td');
+  td.document.textContent(megatotal);
+  rr.document.appendChild(td);
+  footer.document.appendChild(rr);
+  tableEl.document.appendChild(footer);
+
+}
 createTableHeader();
 
 let seattel=new Store('Seattel',23,65,6.3);
+let tokyo=new Store('Tokyo',3,24,1.2);
+let dobia=new Store('Dobia',11,38,2.1);
+let paris=new Store('Paris',20,38,2.3);
+let lima=new Store('Lima',2,16,4.6);
+
+
+
 
 seattel.calcRanCustPh();
 seattel.calavrage();
 seattel.conTablel();
 
-let tokyo=new Store('Tokyo',3,24,1.2);
+
 
 tokyo.calcRanCustPh();
 tokyo.calavrage();
 tokyo.conTablel();
 
 
-let dobia=new Store('Dobia',11,38,2.1);
+
 
 dobia.calcRanCustPh();
 dobia.calavrage();
 dobia.conTablel();
 
 
-let paris=new Store('Paris',20,38,2.3);
 
 paris.calcRanCustPh();
 paris.calavrage();
@@ -125,310 +150,10 @@ paris.conTablel();
 
 
 
-let lima=new Store('Paris',2,16,4.6);
 
 lima.calcRanCustPh();
 lima.calavrage();
 lima.conTablel();
 
 
-// let seattel ={
-//   nameShop:'Seattel',
-//   min: 23,
-//   max: 65,
-//   avrc: 6.3,
-//   rand: [],
-//   avCookisph : [],
-//   total: 0,
-//   calrandCph: function ()
-//   {
-//     for (let i =0; i<time.length; i++)
-//     {
-//       let min = Math.ceil(this.min);
-//       let max = Math.floor(this.max);
-//       let random = Math.floor(Math.random()*(max-min+1)+min);
-//       this.rand.push(random);
-
-
-//     }
-
-//   },
-
-//   calAvrage : function()
-//   {
-//     for (let i=0;i<time.length;i++)
-//     {
-//       for (let i = 0; i < time.length; i++) {
-//         this.avCookisph[i] = Math.ceil(this.rand[i] * this.avrc);
-//         this.total += this.avCookisph[i];
-//       }
-//     }
-//   },
-//   render : function(){
-//     let section = document.getElementById('s');
-//     let h2 = document.createElement('h2');
-//     h2.textContent = this.nameShop;
-//     section.appendChild(h2);
-
-
-//     let ul = document.createElement('ul');
-//     section.appendChild(ul);
-//     for (let i = 0; i < time.length; i++) {
-//       let li = document.createElement('li');
-//       li.textContent = `${time[i]} ${this.avCookisph[i]} cookies`;
-//       ul.appendChild(li);
-//     }
-//     let tota = document.createElement('li');
-//     tota.textContent = 'Total ' + this.total + ' cookies';
-//     ul.appendChild(tota);
-//   },
-
-// };
-
-// seattel.calrandCph();
-// seattel.calAvrage();
-// seattel.render();
-
-// let tokyo ={
-//   nameShop:'tokyo',
-//   min: 3,
-//   max: 24,
-//   avrc: 1.2,
-//   rand: [],
-//   avCookisph : [],
-//   total: 0,
-//   calrandCph: function ()
-//   {
-//     for (let i =0; i<time.length; i++)
-//     {
-//       let min = Math.ceil(this.min);
-//       let max = Math.floor(this.max);
-//       let random = Math.floor(Math.random()*(max-min+1)+min);
-//       this.rand.push(random);
-
-
-//     }
-
-//   },
-
-//   calAvrage : function()
-//   {
-//     for (let i=0;i<time.length;i++)
-//     {
-//       for (let i = 0; i < time.length; i++) {
-//         this.avCookisph[i] = Math.ceil(this.rand[i] * this.avrc);
-//         this.total += this.avCookisph[i];
-//       }
-//     }
-//   },
-//   render : function(){
-//     let section = document.getElementById('s');
-//     let h2 = document.createElement('h2');
-//     h2.textContent = this.nameShop;
-//     section.appendChild(h2);
-
-
-//     let ul = document.createElement('ul');
-//     section.appendChild(ul);
-//     for (let i = 0; i < time.length; i++) {
-//       let li = document.createElement('li');
-//       li.textContent = `${time[i]} ${this.avCookisph[i]} cookies`;
-//       ul.appendChild(li);
-//     }
-//     let tota = document.createElement('li');
-//     tota.textContent = 'Total ' + this.total + ' cookies';
-//     ul.appendChild(tota);
-//   },
-
-// };
-
-// tokyo.calrandCph();
-// tokyo.calAvrage();
-// tokyo.render();
-
-
-
-
-// let dobia ={
-//   nameShop:'Dobia',
-//   min: 11,
-//   max: 38,
-//   avrc: 3.7,
-//   rand: [],
-//   avCookisph : [],
-//   total: 0,
-//   calrandCph: function ()
-//   {
-//     for (let i =0; i<time.length; i++)
-//     {
-//       let min = Math.ceil(this.min);
-//       let max = Math.floor(this.max);
-//       let random = Math.floor(Math.random()*(max-min+1)+min);
-//       this.rand.push(random);
-
-
-//     }
-
-//   },
-
-//   calAvrage : function()
-//   {
-//     for (let i=0;i<time.length;i++)
-//     {
-//       for (let i = 0; i < time.length; i++) {
-//         this.avCookisph[i] = Math.ceil(this.rand[i] * this.avrc);
-//         this.total += this.avCookisph[i];
-//       }
-//     }
-//   },
-//   render : function(){
-//     let section = document.getElementById('s');
-//     let h2 = document.createElement('h2');
-//     h2.textContent = this.nameShop;
-//     section.appendChild(h2);
-
-
-//     let ul = document.createElement('ul');
-//     section.appendChild(ul);
-//     for (let i = 0; i < time.length; i++) {
-//       let li = document.createElement('li');
-//       li.textContent = `${time[i]} ${this.avCookisph[i]} cookies`;
-//       ul.appendChild(li);
-//     }
-//     let tota = document.createElement('li');
-//     tota.textContent = 'Total ' + this.total + ' cookies';
-//     ul.appendChild(tota);
-//   },
-
-// };
-
-// dobia.calrandCph();
-// dobia.calAvrage();
-// dobia.render();
-
-
-
-
-
-
-
-// let paris ={
-//   nameShop:'Paris',
-//   min: 20,
-//   max: 38,
-//   avrc: 2.3,
-//   rand: [],
-//   avCookisph : [],
-//   total: 0,
-//   calrandCph: function ()
-//   {
-//     for (let i =0; i<time.length; i++)
-//     {
-//       let min = Math.ceil(this.min);
-//       let max = Math.floor(this.max);
-//       let random = Math.floor(Math.random()*(max-min+1)+min);
-//       this.rand.push(random);
-
-
-//     }
-
-//   },
-
-//   calAvrage : function()
-//   {
-//     for (let i=0;i<time.length;i++)
-//     {
-//       for (let i = 0; i < time.length; i++) {
-//         this.avCookisph[i] = Math.ceil(this.rand[i] * this.avrc);
-//         this.total += this.avCookisph[i];
-//       }
-//     }
-//   },
-//   render : function(){
-//     let section = document.getElementById('s');
-//     let h2 = document.createElement('h2');
-//     h2.textContent = this.nameShop;
-//     section.appendChild(h2);
-
-
-//     let ul = document.createElement('ul');
-//     section.appendChild(ul);
-//     for (let i = 0; i < time.length; i++) {
-//       let li = document.createElement('li');
-//       li.textContent = `${time[i]} ${this.avCookisph[i]} cookies`;
-//       ul.appendChild(li);
-//     }
-//     let tota = document.createElement('li');
-//     tota.textContent = 'Total ' + this.total + ' cookies';
-//     ul.appendChild(tota);
-//   },
-
-// };
-
-// paris.calrandCph();
-// paris.calAvrage();
-// paris.render();
-
-
-
-
-
-// let lima ={
-//   nameShop:'Lima',
-//   min: 2,
-//   max: 16,
-//   avrc: 4.6,
-//   rand: [],
-//   avCookisph : [],
-//   total: 0,
-//   calrandCph: function ()
-//   {
-//     for (let i =0; i<time.length; i++)
-//     {
-//       let min = Math.ceil(this.min);
-//       let max = Math.floor(this.max);
-//       let random = Math.floor(Math.random()*(max-min+1)+min);
-//       this.rand.push(random);
-
-
-//     }
-
-//   },
-
-//   calAvrage : function()
-//   {
-//     for (let i=0;i<time.length;i++)
-//     {
-//       for (let i = 0; i < time.length; i++) {
-//         this.avCookisph[i] = Math.ceil(this.rand[i] * this.avrc);
-//         this.total += this.avCookisph[i];
-//       }
-//     }
-//   },
-//   render : function(){
-//     let section = document.getElementById('s');
-//     let h2 = document.createElement('h2');
-//     h2.textContent = this.nameShop;
-//     section.appendChild(h2);
-
-
-//     let ul = document.createElement('ul');
-//     section.appendChild(ul);
-//     for (let i = 0; i < time.length; i++) {
-//       let li = document.createElement('li');
-//       li.textContent = `${time[i]} ${this.avCookisph[i]} cookies`;
-//       ul.appendChild(li);
-//     }
-//     let tota = document.createElement('li');
-//     tota.textContent = 'Total ' + this.total + ' cookies';
-//     ul.appendChild(tota);
-//   },
-
-// };
-
-// lima.calrandCph();
-// lima.calAvrage();
-// lima.render();
-
-
-
+totalyph();
