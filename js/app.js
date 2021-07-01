@@ -164,7 +164,7 @@ function addStore(event)
   let storeName = event.target.StoreName.value;
 
   let minNum = event.target.minNum.value;
-  let maxNum = event.target.minNum.value;
+  let maxNum = event.target.maxNum.value;
   let average = event.target.avr.value;
 
 
