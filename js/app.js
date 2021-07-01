@@ -151,4 +151,31 @@ lima.calavrage();
 lima.conTablel();
 
 
+
+
+
+let addStoreEl = document.getElementById('addstore');
+addStoreEl.addEventListener('submit',addStore);
+
+function addStore(event)
+{
+  event.preventDefault();
+
+  let storeName = event.target.StoreName.value;
+
+  let minNum = event.target.minNum.value;
+  let maxNum = event.target.maxNum.value;
+  let average = event.target.avr.value;
+
+
+
+  let newStore = new Store( storeName, minNum, maxNum, average);
+  newStore.calcRanCustPh();
+  newStore.calavrage();
+  newStore.conTablel();
+
+
+
+
+}
 totalyph();
